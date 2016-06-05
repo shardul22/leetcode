@@ -1,20 +1,20 @@
-package com.java;
+package com.java.linkedlist;
 
-
+/**
+ * Problem :- https://leetcode.com/problems/add-two-numbers/
+ * 
+ * Solution :-
+ * 
+ * 1) iterate both of the lists and calculate sum with carry (initially assigned to 0).
+ * 2) if the lists are unequal then check for non null head pointer and add the
+ * remaining digits
+ * 3) At the end check if there is carry and if it is then create a node and return 
+ * head pointer   
+ * 
+ * */
 public class AddTwoNumbers {
 
-	/*
-	 * Problem :- https://leetcode.com/problems/add-two-numbers/
-	 * 
-	 * Solution :-
-	 * 
-	 * 1) iterate both of the lists and calculate sum with carry (initially assigned to 0).
-	 * 2) if the lists are unequal then check for non null head pointer and add the
-	 * remaining digits
-	 * 3) At the end check if there is carry and if it is then create a node and return 
-	 * head pointer   
-	 * 
-	 * */
+	
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		if(l1 == null)
 			return l2;

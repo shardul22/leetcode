@@ -1,4 +1,4 @@
-package com.java;
+package com.java.linkedlist;
 
 /**
  * Problem :- https://leetcode.com/problems/palindrome-linked-list/
@@ -50,7 +50,6 @@ public class PalindromeLinkedList {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		PalindromeLinkedList palindromeLinkedList = new PalindromeLinkedList();
 		ListNode head = new ListNode(1);
 		head.next = new ListNode(2);

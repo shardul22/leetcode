@@ -1,4 +1,4 @@
-package com.java;
+package com.java.linkedlist;
 
 public class SortList {
 	

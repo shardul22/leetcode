@@ -1,4 +1,4 @@
-package com.java;
+package com.java.linkedlist;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
