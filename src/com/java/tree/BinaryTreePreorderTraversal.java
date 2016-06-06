@@ -7,11 +7,12 @@ import java.util.Stack;
 public class BinaryTreePreorderTraversal {
 	
 	public List<Integer> preorderTraversal(TreeNode root) {
-		return preOrderHelper(root);
+		List<Integer> resultList = new ArrayList<>();
+		return preOrderHelper(root, resultList);
 	}
 	
-	public List<Integer> preOrderHelper(TreeNode root) {
-		List<Integer> resultList = new ArrayList<>();
+	public List<Integer> preOrderHelper(TreeNode root, List<Integer> resultList) {
+		
 		if(root == null) {
 			return resultList;
 		}
@@ -29,5 +30,13 @@ public class BinaryTreePreorderTraversal {
 			}
 		}
 		return resultList;
+	}
+	
+	public void preOrderHelperRecursive(TreeNode root, List<Integer> resultList) {
+		if(root != null) {
+			resultList.add(root.val);
+			preOrderHelperRecursive(root.left, resultList);
+			preOrderHelperRecursive(root.right, resultList);
+		}
 	}
 }
