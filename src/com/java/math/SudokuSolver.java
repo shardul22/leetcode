@@ -21,8 +21,8 @@ public class SudokuSolver {
         						board[i][j] = '.';
         					}
         				}
-        				return false;
         			}
+        			return false;
         		}
         	}
         }
