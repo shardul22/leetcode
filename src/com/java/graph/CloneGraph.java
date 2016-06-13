@@ -13,10 +13,10 @@ import java.util.Queue;
 public class CloneGraph {
 
 	public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-		
+
 		if(node == null)
 			return node;
-		
+
 		Map<UndirectedGraphNode, UndirectedGraphNode> nodeMap = new HashMap<>();
 		UndirectedGraphNode clonnedRoot = new UndirectedGraphNode(node.label);
 		nodeMap.put(node, clonnedRoot);
