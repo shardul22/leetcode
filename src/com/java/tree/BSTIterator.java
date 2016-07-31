@@ -2,6 +2,9 @@ package com.java.tree;
 
 import java.util.Stack;
 
+/**
+ * https://leetcode.com/problems/binary-search-tree-iterator/ 
+ */
 public class BSTIterator {
 
 	private Stack<TreeNode> nodeStack;
@@ -34,5 +37,4 @@ public class BSTIterator {
 		}
 		return temp.val;
 	}
-
 }
