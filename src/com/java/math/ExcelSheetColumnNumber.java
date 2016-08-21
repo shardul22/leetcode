@@ -1,5 +1,8 @@
 package com.java.math;
 
+/**
+ * https://leetcode.com/problems/excel-sheet-column-number/
+ */
 public class ExcelSheetColumnNumber {
 
 	public int titleToNumber(String s) {
