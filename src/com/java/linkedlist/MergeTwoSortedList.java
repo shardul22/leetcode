@@ -1,5 +1,8 @@
 package com.java.linkedlist;
 
+/**
+ * https://leetcode.com/problems/merge-two-sorted-lists/
+ */
 public class MergeTwoSortedList {
 
 	//2-4-6
@@ -29,12 +32,7 @@ public class MergeTwoSortedList {
 		
 		if(l2 == null)
 			l3.next = l1;
-		
-		l3 = resultNode.next;
-		while(l3 != null) {
-			System.out.println(l3.val);
-			l3 = l3.next;
-		}
+
 		return resultNode.next;
 	}
 
