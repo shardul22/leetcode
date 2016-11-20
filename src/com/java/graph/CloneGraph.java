@@ -12,37 +12,41 @@ import java.util.Queue;
  * */
 public class CloneGraph {
 
-	public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
 
-		if(node == null)
-			return node;
+        if (node == null)
+            return node;
 
-		Map<UndirectedGraphNode, UndirectedGraphNode> nodeMap = new HashMap<>();
-		UndirectedGraphNode clonnedRoot = new UndirectedGraphNode(node.label);
-		nodeMap.put(node, clonnedRoot);
-		Queue<UndirectedGraphNode> nodeQueue = new LinkedList<>();
-		nodeQueue.offer(node);
-		while(!nodeQueue.isEmpty()) {
-			UndirectedGraphNode currentNode = nodeQueue.poll();
-			UndirectedGraphNode currentClonnedNode = nodeMap.get(currentNode);
-			for(UndirectedGraphNode neighbourNode : currentNode.neighbors) {
-				if(nodeMap.containsKey(neighbourNode)) {
-					currentClonnedNode.neighbors.add(nodeMap.get(neighbourNode));
-				} else {
-					nodeQueue.offer(neighbourNode);
-					UndirectedGraphNode clonnedNeighbourNode = new UndirectedGraphNode(neighbourNode.label);
-					nodeMap.put(neighbourNode, clonnedNeighbourNode);
-					currentClonnedNode.neighbors.add(clonnedNeighbourNode);
-				}
-			}
-		}
-		return clonnedRoot;
-	}
+        Map<UndirectedGraphNode, UndirectedGraphNode> nodeMap = new HashMap<>();
+        UndirectedGraphNode clonnedRoot = new UndirectedGraphNode(node.label);
+        nodeMap.put(node, clonnedRoot);
+        Queue<UndirectedGraphNode> nodeQueue = new LinkedList<>();
+        nodeQueue.offer(node);
+        while (!nodeQueue.isEmpty()) {
+            UndirectedGraphNode currentNode = nodeQueue.poll();
+            UndirectedGraphNode currentClonnedNode = nodeMap.get(currentNode);
+            for (UndirectedGraphNode neighbourNode : currentNode.neighbors) {
+                if (nodeMap.containsKey(neighbourNode)) {
+                    currentClonnedNode.neighbors.add(nodeMap.get(neighbourNode));
+                } else {
+                    nodeQueue.offer(neighbourNode);
+                    UndirectedGraphNode clonnedNeighbourNode = new UndirectedGraphNode(neighbourNode.label);
+                    nodeMap.put(neighbourNode, clonnedNeighbourNode);
+                    currentClonnedNode.neighbors.add(clonnedNeighbourNode);
+                }
+            }
+        }
+        return clonnedRoot;
+    }
 
 }
 
 class UndirectedGraphNode {
-	int label;
-	List<UndirectedGraphNode> neighbors;
-	UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }	
+    int label;
+    List<UndirectedGraphNode> neighbors;
+
+    UndirectedGraphNode(int x) {
+        label = x;
+        neighbors = new ArrayList<UndirectedGraphNode>();
+    }
 }

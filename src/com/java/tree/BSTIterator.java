@@ -3,38 +3,43 @@ package com.java.tree;
 import java.util.Stack;
 
 /**
- * https://leetcode.com/problems/binary-search-tree-iterator/ 
+ * https://leetcode.com/problems/binary-search-tree-iterator/
  */
 public class BSTIterator {
 
-	private Stack<TreeNode> nodeStack;
-	public BSTIterator(TreeNode root) {
-		if(root != null) {
-			nodeStack = new Stack<>();
-			while(root != null) {
-				nodeStack.push(root);
-				root = root.left;
-			}
-		}
-	}
+    private Stack<TreeNode> nodeStack;
 
-	/** @return whether we have a next smallest number */
-	public boolean hasNext() {
-		if(nodeStack != null)
-			return !nodeStack.isEmpty();
-		return false;
-	}
+    public BSTIterator(TreeNode root) {
+        if (root != null) {
+            nodeStack = new Stack<>();
+            while (root != null) {
+                nodeStack.push(root);
+                root = root.left;
+            }
+        }
+    }
 
-	/** @return the next smallest number */
-	public int next() {
-		TreeNode temp = nodeStack.pop();
-		if(temp.right != null) {
-			TreeNode root = temp.right;
-			while(root != null) {
-				nodeStack.push(root);
-				root = root.left;
-			}
-		}
-		return temp.val;
-	}
+    /**
+     * @return whether we have a next smallest number
+     */
+    public boolean hasNext() {
+        if (nodeStack != null)
+            return !nodeStack.isEmpty();
+        return false;
+    }
+
+    /**
+     * @return the next smallest number
+     */
+    public int next() {
+        TreeNode temp = nodeStack.pop();
+        if (temp.right != null) {
+            TreeNode root = temp.right;
+            while (root != null) {
+                nodeStack.push(root);
+                root = root.left;
+            }
+        }
+        return temp.val;
+    }
 }
